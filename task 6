@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String[] submittedStudents = {"Ali", "Sarah", "John", "Emma", "David", "Noah", "Sophia"};
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = input.nextLine();
+
+        boolean found = false;
+
+        for (int i = 0; i < submittedStudents.length; i++) {
+            if (submittedStudents[i].equalsIgnoreCase(name)) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            System.out.println("Assignment submitted!");
+        } else {
+            System.out.println("Assignment missing! Please submit it.");
+        }
+
+        input.close();
+    }
+}
