@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] isbnNumbers = {1001, 1025, 1050, 1088, 1102, 1120, 1155, 1180};
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the ISBN number: ");
+        int isbn = input.nextInt();
+
+        int low = 0;
+        int high = isbnNumbers.length - 1;
+        boolean found = false;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+
+            if (isbnNumbers[mid] == isbn) {
+                found = true;
+                break;
+            } else if (isbn < isbnNumbers[mid]) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        if (found) {
+            System.out.println("Book available! You can issue it.");
+        } else {
+            System.out.println("Book not available in the library.");
+        }
+
+        input.close();
+    }
+}
