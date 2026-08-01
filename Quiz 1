@@ -1,0 +1,31 @@
+public class HospitalTemperatures {
+
+	 public static void main(String[] args) {
+
+	        int[] temperatures = {38, 36, 40, 37, 39, 35, 41};
+
+	        System.out.println("Patient Temperatures:");
+	        for (int i = 0; i < temperatures.length; i++) {
+	            System.out.println("Patient " + (i + 1) + ": " + temperatures[i] + "°C");
+	        }
+
+	        int highest = temperatures[0];
+	        int lowest = temperatures[0];
+
+	        for (int i = 1; i < temperatures.length; i++) {
+	            if (temperatures[i] > highest) {
+	                highest = temperatures[i];
+	            }
+
+	            if (temperatures[i] < lowest) {
+	                lowest = temperatures[i];
+	            }
+	        }
+
+	        int difference = highest - lowest;
+
+	        System.out.println("\nHighest Temperature: " + highest + "°C");
+	        System.out.println("Lowest Temperature: " + lowest + "°C");
+	        System.out.println("Difference: " + difference + "°C");
+	    }
+	}
